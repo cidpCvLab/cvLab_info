@@ -29,10 +29,11 @@ def readdk(file):
 def read_number(file):
     data = xlrd.open_workbook(file)
     table = data.sheet_by_index(0)
-    numbers = table.col_values(1)[1:]
-    numbers = map(int, numbers)
-    numbers = map(str, numbers)
-    return list(numbers)
+    # numbers = table.col_values(1)[1:]
+    # numbers = map(int, numbers)
+    # numbers = map(str, numbers)
+    # return list(numbers)
+    return [str(int(i)) for i in table.col_values(1)[1:]]
 
 
 path = "打卡信息录入 (1).xlsx"
